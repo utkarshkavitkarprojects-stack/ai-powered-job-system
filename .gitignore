@@ -24,3 +24,5 @@ build/
 # OS / IDE
 .vscode/
 .DS_Store
+# Large job dataset
+backend/data/jobs.json
