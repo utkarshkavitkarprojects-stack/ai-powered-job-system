@@ -25,6 +25,9 @@
 | **Swagger Documentation** | https://ai-powered-job-system.onrender.com/docs |
 
 ---
+# Project Video Link 
+Link - https://drive.google.com/file/d/1RXJ2Z22iSLMldHPtkjWrq6GM-obCpCt_/view?usp=drive_link
+---
 
 # 📖 Project Overview
 
