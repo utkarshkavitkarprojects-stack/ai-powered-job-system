@@ -841,9 +841,9 @@ function App() {
       return;
     }
 
-    if (file.size > 10 * 1024 * 1024) {
+    if (file.size > 5 * 1024 * 1024) {
       setResumeError(
-        "Resume must be smaller than 10MB."
+        "Resume must be smaller than 5MB."
       );
       setResumeFile(null);
       return;
@@ -2149,7 +2149,7 @@ function App() {
               </label>
 
               <span className="file-type-badge">
-                PDF · max 5MB
+                PDF · max 5 MB
               </span>
             </div>
 
