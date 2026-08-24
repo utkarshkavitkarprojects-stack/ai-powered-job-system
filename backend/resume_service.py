@@ -2,7 +2,7 @@ import json
 import re
 from typing import Any, Dict, List
 
-import fitz
+import pymupdf
 from google import genai
 
 
@@ -19,7 +19,7 @@ def extract_resume_text(pdf_bytes: bytes) -> str:
         raise ValueError("Uploaded PDF is empty.")
 
     try:
-        document = fitz.open(
+        document = pymupdf.open(
             stream=pdf_bytes,
             filetype="pdf",
         )
