@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from typing import Any, Dict, List
 
@@ -111,10 +112,13 @@ def parse_json_response(text: str) -> Dict[str, Any]:
 def analyze_resume(
     resume_text: str,
     api_key: str,
-    model: str = "gemini-2.5-flash",
+    model: str = None,
 ) -> Dict[str, Any]:
     """
     Analyze a resume using the user's Gemini API key.
+
+    The Gemini model is read from the GEMINI_MODEL
+    environment variable.
 
     IMPORTANT:
     The API key exists only for this request.
@@ -124,6 +128,20 @@ def analyze_resume(
     if not api_key or not api_key.strip():
         raise ValueError(
             "Gemini API key is required."
+        )
+
+    # Read the Gemini model from the environment.
+    # If no model is provided explicitly, use GEMINI_MODEL.
+    # The fallback preserves the previous behavior.
+    if not model:
+        model = os.getenv(
+            "GEMINI_MODEL",
+            "gemini-2.5-flash",
+        ).strip()
+
+    if not model:
+        raise ValueError(
+            "GEMINI_MODEL environment variable is required."
         )
 
     client = genai.Client(
@@ -232,6 +250,7 @@ IMPORTANT EXTRACTION RULES:
 23. Do not calculate total_experience_years yourself. Python will calculate it from the dates.
 24. If exact month is unavailable but year is available, use YYYY-01 for start_date and YYYY-12 for completed employment, or YYYY-01 for present employment.
 """
+
     try:
 
         response = client.models.generate_content(
@@ -415,6 +434,7 @@ def normalize_profile(
                 )
             ),
     }
+
 
 def safe_float(
     value: Any,
