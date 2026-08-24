@@ -218,32 +218,6 @@ This allows identical jobs from different platforms to appear only once.
 
 ---
 
-# 🤖 AI Tagging & Filtering
-
-Each processed job is enriched with AI-generated metadata.
-
-### AI Extracts
-
-- Role category
-- Experience level
-- Technical skills
-- Keywords
-- AI tags
-- Domain
-
-Example:
-
-| Original Job | AI Enrichment |
-|-------------|---------------|
-| Data Scientist | Role Category |
-| Python, SQL | AI Skills |
-| ML, NLP | Technical Keywords |
-| Entry Level | Experience Level |
-
-These fields power the advanced filters available in the frontend.
-
----
-
 # 📄 Resume-Based Recommendation Engine
 
 The recommendation engine compares the candidate profile against every AI-processed job.
