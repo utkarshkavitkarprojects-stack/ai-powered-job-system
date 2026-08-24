@@ -413,29 +413,56 @@ pytest
 
 ```text
 CareerAI/
-
+│
 ├── backend/
-│   ├── main.py
+│   ├── ai/
+│   │   ├── __init__.py
+│   │   ├── gemini.py
+│   │   ├── job_classifier.py
+│   │   ├── job_processor.py
+│   ├── guardrails/
+│   │   ├── test.py
+│   │
 │   ├── database.py
+│   ├── main.py
+│   ├── migrate_ai_columns.py
 │   ├── models.py
+│   ├── requirements.txt
 │   ├── resume_service.py
-│   ├── tests/
-│   │   └── test_main.py
-│   └── data/jobs.json
+│   └── test_ai_processor.py
 │
 ├── frontend/
+│   ├── public/
+│   │   ├── favicon.svg
+│   │   └── icons.svg
+│   │
 │   ├── src/
-│   ├── components/
-│   └── App.jsx
+│   │   ├── assets/
+│   │   │   ├── hero.png
+│   │   │   ├── react.svg
+│   │   │   └── vite.svg
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   │
+│   ├── .gitignore
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   └── vite.config.js
 │
 ├── screenshots/
+│   ├── ai-assistant.png
+│   ├── ai-recommendations.png
+│   ├── architecture.png
 │   ├── hero.png
 │   ├── job-search.png
-│   ├── ai-recommendations.png
-│   ├── ai-assistant.png
-│   ├── resume-upload.png
-│   └── architecture.png
+│   └── resume-upload.png
 │
+├── .gitignore
 └── README.md
 ```
 
